@@ -592,13 +592,60 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        /* ...existing code... */
+        .tech-icon-bounce {
+            animation: bounce 1.5s infinite alternate;
+        }
+        .tech-icon-bounce:nth-child(2) { animation-delay: 0.2s; }
+        .tech-icon-bounce:nth-child(3) { animation-delay: 0.4s; }
+        .tech-icon-bounce:nth-child(4) { animation-delay: 0.6s; }
+        .tech-icon-bounce:nth-child(5) { animation-delay: 0.8s; }
+        .tech-icon-bounce:nth-child(6) { animation-delay: 1s; }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-18px) scale(1.1); }
+        }
+        /* ...existing code... */
+
+        .logo-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 2rem;
+            line-height: 1;
+            padding-bottom: 0.05rem; /* ainda menos espaço abaixo */
+        }
+
+        .logo-name {
+            font-size: 1.25rem;      /* menor e mais compacto */
+            font-weight: 800;
+            color: var(--primary-blue);
+            letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logo-role {
+            font-size: 0.75rem;      /* menor ainda */
+            font-weight: 500;
+            color: var(--secondary-blue);
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            margin-top: 0.05rem;     /* mínimo espaço acima */
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        /* ...existing code... */
     </style>
 </head>
 <body>
     <header class="header" id="header">
         <div class="container">
             <nav class="nav">
-                <a href="#" class="logo">MT</a>
+                <div class="logo-block">
+                    <span class="logo-name">Miquéias Teles</span>
+                    <span class="logo-role">Desenvolvedor FullStack</span>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#about">Sobre</a></li>
@@ -619,9 +666,17 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
+                    <div class="tech-icons-animated" style="width:100%; height:120px; display:flex; align-items:center; justify-content:center; gap:2rem; margin-bottom:2rem;">
+                        <img src="static/python.png" alt="Python" class="tech-icon-bounce" style="width:48px; height:48px;">
+                        <img src="static/js.png" alt="JavaScript" class="tech-icon-bounce" style="width:48px; height:48px;">
+                        <img src="static/html.png" alt="HTML" class="tech-icon-bounce" style="width:48px; height:48px;">
+                        <img src="static/css.png" alt="CSS" class="tech-icon-bounce" style="width:48px; height:48px;">
+                        <img src="static/react.png" alt="React" class="tech-icon-bounce" style="width:48px; height:48px;">
+                        <img src="static/postgresql.png" alt="PostgreSQL" class="tech-icon-bounce" style="width:48px; height:48px;">
+                    </div>
                     <div class="hero-text">
                         <h1>Olá, eu sou <span class="highlight">Miquéias Teles</span></h1>
-                        <p>Desenvolvedor apaixonado por criar soluções digitais inovadoras. Especialista em sistemas web e desktop, sempre em busca da excelência técnica.</p>
+                        <p><strong>Desenvolvedor Full Stack Júnior</strong> apaixonado por criar soluções digitais inovadoras. Especialista em sistemas web e desktop, sempre em busca da excelência técnica.</p>
                         <a href="#projects" class="cta-button">Ver Meus Projetos</a>
                     </div>
                 </div>
@@ -636,9 +691,9 @@
                 </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Sou formado em <strong>Ciências Contábeis</strong> e atualmente curso <strong>Direito</strong>, trazendo uma perspectiva única para o mundo da tecnologia. Desde 2019, atuo no setor fiscal, onde desenvolvi uma compreensão profunda de processos empresariais e regulamentações.</p>
-                        <p>Paralelamente, venho desenvolvendo sistemas por conta própria, descobrindo minha verdadeira paixão: <strong>a programação</strong>. Cada linha de código é uma oportunidade de resolver problemas reais e criar soluções que fazem a diferença.</p>
-                        <p>Agora, estou focado em migrar definitivamente para a área de desenvolvimento, combinando minha experiência em negócios com habilidades técnicas para criar sistemas robustos e eficientes.</p>
+                        <p>Minha formação acadêmica é em <strong>Contabilidade</strong>, o que me proporcionou uma visão prática sobre gestão empresarial e processos financeiros. Essa experiência foi fundamental para criar sistemas como o <strong>UMP Financeiro</strong> e o <strong>MTSistem - Gestão de RH</strong>, unindo conhecimento técnico e de negócios para entregar soluções eficientes e inovadoras.</p>
+                        <p>Sou apaixonado por <strong>programação</strong> e desenvolvimento de sistemas, sempre buscando resolver problemas reais e agregar valor através da tecnologia.</p>
+                        <p>Atualmente, estou focado em aprimorar minhas habilidades técnicas e expandir minha atuação na área de desenvolvimento, criando projetos robustos e personalizados.</p>
                     </div>
                     <div class="about-image">
                             <img src="static/foto_profissional.png" alt="Foto Profissional" class="about-placeholder" style="object-fit:contain; width:100%; height:400px; background:#fff;">
@@ -940,6 +995,7 @@
         let next = (current + direction + images.length) % images.length;
         images[next].classList.add('active');
     }
+
     </script>
 </body>
 </html>
