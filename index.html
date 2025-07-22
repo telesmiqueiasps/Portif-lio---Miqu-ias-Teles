@@ -636,6 +636,181 @@
             text-transform: uppercase;
         }
         /* ...existing code... */
+
+        /* ...existing code... */
+        .projects-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .project-preview-card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 6px 24px var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .project-preview-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 32px rgba(37,99,235,0.15);
+        }
+        .preview-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            background: #f8fafc;
+        }
+        .preview-btn {
+            margin-top: 1rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(37,99,235,0.12);
+        }
+        .preview-btn:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+        /* Modal Styles */
+        .project-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #aaa;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-modal:hover {
+            color: var(--primary-blue);
+        }
+
+        .modal-carousel {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .modal-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.4s;
+            border-radius: 10px;
+        }
+
+        .modal-img.active {
+            opacity: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-link:hover {
+            color: var(--secondary-blue);
+            transform: translateX(5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-18px) scale(1.1); }
+        }
     </style>
 </head>
 <body>
@@ -706,71 +881,23 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Meus Projetos</h2>
-                    <p>Soluções desenvolvidas com foco em qualidade e inovação</p>
+                    <p>Confira uma prévia dos meus principais projetos</p>
                 </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-carousel">
-                            <img src="static/ump1.png" alt="UMP Financeiro 1" class="carousel-img active">
-                            <img src="static/ump2.png" alt="UMP Financeiro 2" class="carousel-img">
-                            <img src="static/ump3.png" alt="UMP Financeiro 3" class="carousel-img">
-                            <img src="static/ump4.png" alt="UMP Financeiro 4" class="carousel-img">
-                            <img src="static/ump5.png" alt="UMP Financeiro 5" class="carousel-img">
-                            <button class="carousel-btn prev" onclick="moveCarousel(-1, this)">&#10094;</button>
-                            <button class="carousel-btn next" onclick="moveCarousel(1, this)">&#10095;</button>
-                        </div>
+                <div class="projects-preview-grid">
+                    <div class="project-preview-card">
+                        <img src="static/ump1.png" alt="UMP Financeiro" class="preview-img">
                         <h3>UMP Financeiro</h3>
-                        <p>Sistema web completo para gestão financeira da União de Mocidade Presbiteriana (UMP) da Igreja Presbiteriana do Brasil a nível Sínodal Paraíba, com módulos como: Painel Administrativo, Gestão de Sócios, Lançamentos, Relatórios, Consultas, Orientações, Suporte, Configurações, etc.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">SQLAlchemy</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Integração com APIs</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/telesmiqueiasps/umpfinanceiro" class="project-link" target="_blank">
-                                GitHub →
-                            </a>
-                            <a href="https://web-production-2a02a.up.railway.app/login?next=%2F" class="project-link" target="_blank">
-                                Demo →
-                            </a>
-                        </div>
-                    </div>    
-                </div>
-                <div class="projects-grid"></div>
-                    <div class="project-card">
-                        <div class="project-carousel">
-                            <img src="static/rh1.png" alt="MTSistem - Gestão de RH 1" class="carousel-img active">
-                            <img src="static/rh2.png" alt="MTSistem - Gestão de RH 2" class="carousel-img">
-                            <img src="static/rh3.png" alt="MTSistem - Gestão de RH 3" class="carousel-img">
-                            <img src="static/rh4.png" alt="MTSistem - Gestão de RH 4" class="carousel-img">
-                            <img src="static/rh5.png" alt="MTSistem - Gestão de RH 5" class="carousel-img">
-                            <button class="carousel-btn prev" onclick="moveCarousel(-1, this)">&#10094;</button>
-                            <button class="carousel-btn next" onclick="moveCarousel(1, this)">&#10095;</button>
-                        </div>
-                        <h3>MTSistem - Gestão de RH</h3>
-                        <p>Sistema desktop completo para gestão de recursos humanos.</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Tkinter</span>
-                            <span class="tech-tag">CustomTkinter</span>
-                            <span class="tech-tag">SQLAlchemy</span>
-                            <span class="tech-tag">SQLite</span>
-                            <span class="tech-tag">Pillow</span>
-                            <span class="tech-tag">Integração com APIs</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/telesmiqueiasps/MTSistem-RH---Dark-Mode" class="project-link" target="_blank">
-                                GitHub →
-                            </a>
-                        </div>
+                        <p>Sistema web para gestão financeira da UMP.</p>
+                        <button class="preview-btn" onclick="openModal('umpfinanceiro')">Ver mais</button>
                     </div>
-                </div>    
+                    <div class="project-preview-card">
+                        <img src="static/rh1.png" alt="MTSistem RH" class="preview-img">
+                        <h3>MTSistem RH</h3>
+                        <p>Gestão de recursos humanos desktop.</p>
+                        <button class="preview-btn" onclick="openModal('mtsistem')">Ver mais</button>
+                    </div>
+                    <!-- Adicione outros projetos aqui -->
+                </div>
             </div>
         </section>
 
@@ -860,6 +987,84 @@
             <p>&copy; 2025 Miquéias Teles. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Modal do projeto UMP Financeiro -->
+<div id="modal-umpfinanceiro" class="project-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('umpfinanceiro')">&times;</span>
+        <h2>UMP Financeiro</h2>
+        <div class="modal-carousel">
+            <img src="static/ump1.png" alt="UMP Financeiro 1" class="modal-img active">
+            <img src="static/ump2.png" alt="UMP Financeiro 2" class="modal-img">
+            <img src="static/ump3.png" alt="UMP Financeiro 3" class="modal-img">
+            <img src="static/ump4.png" alt="UMP Financeiro 4" class="modal-img">
+            <img src="static/ump5.png" alt="UMP Financeiro 5" class="modal-img">
+            <button class="carousel-btn prev" onclick="moveModalCarousel(-1, 'umpfinanceiro')">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveModalCarousel(1, 'umpfinanceiro')">&#10095;</button>
+        </div>
+        <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Integração com APIs</span>
+        </div>
+        <div class="project-links">
+            <a href="https://github.com/telesmiqueiasps/umpfinanceiro" class="project-link" target="_blank">GitHub →</a>
+            <a href="https://web-production-2a02a.up.railway.app/login?next=%2F" class="project-link" target="_blank">Demo →</a>
+        </div>
+        <div class="project-details">
+            <ul>
+                <li>Painel administrativo intuitivo para gestão financeira.</li>
+                <li>Controle de sócios, lançamentos, relatórios e consultas.</li>
+                <li>Orientações e suporte integrado.</li>
+                <li>Configurações personalizáveis para diferentes perfis de usuário.</li>
+                <li>Integração com APIs externas e exportação de dados.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Modal do projeto MTSistem RH -->
+<div id="modal-mtsistem" class="project-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('mtsistem')">&times;</span>
+        <h2>MTSistem - Gestão de RH</h2>
+        <div class="modal-carousel">
+            <img src="static/rh1.png" alt="MTSistem RH 1" class="modal-img active">
+            <img src="static/rh2.png" alt="MTSistem RH 2" class="modal-img">
+            <img src="static/rh3.png" alt="MTSistem RH 3" class="modal-img">
+            <img src="static/rh4.png" alt="MTSistem RH 4" class="modal-img">
+            <img src="static/rh5.png" alt="MTSistem RH 5" class="modal-img">
+            <button class="carousel-btn prev" onclick="moveModalCarousel(-1, 'mtsistem')">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveModalCarousel(1, 'mtsistem')">&#10095;</button>
+        </div>
+        <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Tkinter</span>
+            <span class="tech-tag">CustomTkinter</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">Pillow</span>
+            <span class="tech-tag">Integração com APIs</span>
+        </div>
+        <div class="project-links">
+            <a href="https://github.com/telesmiqueiasps/MTSistem-RH---Dark-Mode" class="project-link" target="_blank">GitHub →</a>
+        </div>
+        <div class="project-details">
+            <ul>
+                <li>Gestão de colaboradores e folha de pagamento.</li>
+                <li>Relatórios detalhados e exportação de dados.</li>
+                <li>Interface moderna com CustomTkinter.</li>
+                <li>Integração com APIs externas.</li>
+                <li>Banco de dados local com SQLite.</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
     <script>
         // Header scroll effect
@@ -996,6 +1201,47 @@
         images[next].classList.add('active');
     }
 
+    function openModal(project) {
+        const modal = document.getElementById(`modal-${project}`);
+        if (modal) {
+            modal.style.display = 'flex';
+            // Ativar a primeira imagem do carrossel
+            const firstImage = modal.querySelector('.modal-img');
+            if (firstImage) {
+                firstImage.classList.add('active');
+            }
+        }
+    }
+
+    function closeModal(project) {
+        const modal = document.getElementById(`modal-${project}`);
+        if (modal) {
+            modal.style.display = 'none';
+            // Remover a classe active de todas as imagens do carrossel ao fechar
+            const images = modal.querySelectorAll('.modal-img');
+            images.forEach(img => img.classList.remove('active'));
+        }
+    }
+
+    function moveModalCarousel(direction, project) {
+        const modal = document.getElementById(`modal-${project}`);
+        const images = modal.querySelectorAll('.modal-img');
+        let current = Array.from(images).findIndex(img => img.classList.contains('active'));
+        images[current].classList.remove('active');
+        let next = (current + direction + images.length) % images.length;
+        images[next].classList.add('active');
+    }
+
+    // Fechar o modal ao clicar fora do conteúdo
+    window.addEventListener('click', (e) => {
+        const modals = document.querySelectorAll('.project-modal');
+        modals.forEach(modal => {
+            if (e.target === modal) {
+                const projectId = modal.getAttribute('id').split('-')[1];
+                closeModal(projectId);
+            }
+        });
+    });
     </script>
 </body>
 </html>
