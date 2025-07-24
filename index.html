@@ -273,58 +273,10 @@
             margin: 0 auto;
         }
 
-        /* About Section */
-        .about {
-            background: var(--white);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text {
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-
-        .about-text.visible {
-            animation: slideInLeft 0.8s ease-out forwards;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-image {
-            opacity: 0;
-            transform: translateX(30px);
-        }
-
-        .about-image.visible {
-            animation: slideInRight 0.8s ease-out forwards;
-        }
-
-        .about-placeholder {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
 
         /* Projects Section */
         .projects {
-            background: var(--bg-light);
+            background: var(--white);
         }
 
         .projects-grid {
@@ -418,7 +370,7 @@
 
         /* Skills Section */
         .skills {
-            background: var(--white);
+            background: var(--bg-light);
         }
 
         .skills-grid {
@@ -606,11 +558,6 @@
 
             .section-title h2 {
                 font-size: 2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
             .projects-grid {
@@ -836,6 +783,86 @@
             transform: translateX(5px);
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--white);
+            padding: 5rem 0;
+        }
+
+        .testimonials-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .testimonials-title p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 18px;
+            box-shadow: 0 4px 18px var(--shadow);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 8px 32px rgba(37,99,235,0.15);
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-photo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e0f2fe;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .author-role {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             to {
@@ -991,9 +1018,9 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#about">Sobre</a></li>
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
                 <div class="mobile-menu">
@@ -1019,7 +1046,7 @@
                     </div>
                     <div class="hero-text">
                         <h1>Olá, eu sou <span class="highlight">Miquéias Teles</span></h1>
-                        <p><strong>Desenvolvedor Full Stack Júnior</strong> apaixonado por criar soluções digitais inovadoras. Especialista em sistemas web e desktop, sempre em busca da excelência técnica.</p>
+                        <p><strong>Desenvolvedor Full Stack</strong> | Tenho formação acadêmica em <strong>Contabilidade</strong>, o que me proporcionou uma visão prática sobre gestão empresarial e processos financeiros. Essa experiência foi fundamental para criar sistemas como o <strong>UMP Financeiro</strong> e o <strong>MTSistem - Gestão de RH</strong>, unindo conhecimento técnico e de negócios para entregar soluções eficientes e inovadoras.</p>
                         <a href="#projects" class="cta-button">Ver Meus Projetos</a>
                     </div>
                 </div>
@@ -1029,48 +1056,74 @@
             </div>
         </section>
 
-        <section id="about" class="section about">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Sobre Mim</h2>
-                    <p>Conheça um pouco da minha trajetória e paixão por desenvolvimento</p>
+        <section id="projects" class="section projects" style="padding: 4rem 0;">
+            <div class="container" style="max-width: 1200px; margin: auto; padding: 0 1rem;">
+                <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="font-size: 2.5rem;">Meus Projetos</h2>
+                    <p style="color: #555;">Confira uma prévia dos meus principais projetos</p>
                 </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Minha formação acadêmica é em <strong>Contabilidade</strong>, o que me proporcionou uma visão prática sobre gestão empresarial e processos financeiros. Essa experiência foi fundamental para criar sistemas como o <strong>UMP Financeiro</strong> e o <strong>MTSistem - Gestão de RH</strong>, unindo conhecimento técnico e de negócios para entregar soluções eficientes e inovadoras.</p>
-                        <p>Sou apaixonado por <strong>programação</strong> e desenvolvimento de sistemas, sempre buscando resolver problemas reais e agregar valor através da tecnologia.</p>
-                        <p>Atualmente, estou focado em aprimorar minhas habilidades técnicas e expandir minha atuação na área de desenvolvimento, criando projetos robustos e personalizados.</p>
+                <div class="projects-preview-grid" style="
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 2rem;
+                ">
+                    <!-- Card 1 -->
+                    <div class="project-preview-card" style="
+                        background: white;
+                        border-radius: 12px;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                        overflow: hidden;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 24px rgba(0,0,0,0.12)';" 
+                    onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';">
+                        <img src="static/ump1.png" alt="UMP Financeiro" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 1rem;">
+                            <h3 style="margin: 0 0 0.5rem; color: #222;">UMP Financeiro</h3>
+                            <p style="font-size: 0.95rem; color: #555;">Sistema web para gestão financeira da UMP.</p>
+                            <button onclick="openModal('umpfinanceiro')" style="
+                                margin-top: 1rem;
+                                background-color: #2764eb;
+                                color: white;
+                                border: none;
+                                padding: 0.6rem 1.2rem;
+                                border-radius: 6px;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                            " onmouseover="this.style.backgroundColor='#1e4db7'" 
+                            onmouseout="this.style.backgroundColor='#2764eb'">Ver mais</button>
+                        </div>
                     </div>
-                    <div class="about-image">
-                            <img src="static/foto_abstrata1.png" alt="Foto Abstrata 1" class="about-placeholder" style="object-fit:contain; width:100%; height:400px; background:#fff;">
+
+                    <!-- Card 2 -->
+                    <div class="project-preview-card" style="
+                        background: white;
+                        border-radius: 12px;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                        overflow: hidden;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 6px 24px rgba(0,0,0,0.12)';" 
+                    onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';">
+                        <img src="static/rh1.png" alt="MTSistem RH" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 1rem;">
+                            <h3 style="margin: 0 0 0.5rem; color: #222;">MTSistem RH</h3>
+                            <p style="font-size: 0.95rem; color: #555;">Gestão de recursos humanos desktop.</p>
+                            <button onclick="openModal('mtsistem')" style="
+                                margin-top: 1rem;
+                                background-color: #2764eb;
+                                color: white;
+                                border: none;
+                                padding: 0.6rem 1.2rem;
+                                border-radius: 6px;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                            " onmouseover="this.style.backgroundColor='#1e4db7'" 
+                            onmouseout="this.style.backgroundColor='#2764eb'">Ver mais</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section projects">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Meus Projetos</h2>
-                    <p>Confira uma prévia dos meus principais projetos</p>
-                </div>
-                <div class="projects-preview-grid">
-                    <div class="project-preview-card">
-                        <img src="static/ump1.png" alt="UMP Financeiro" class="preview-img">
-                        <h3>UMP Financeiro</h3>
-                        <p>Sistema web para gestão financeira da UMP.</p>
-                        <button class="preview-btn" onclick="openModal('umpfinanceiro')">Ver mais</button>
-                    </div>
-                    <div class="project-preview-card">
-                        <img src="static/rh1.png" alt="MTSistem RH" class="preview-img">
-                        <h3>MTSistem RH</h3>
-                        <p>Gestão de recursos humanos desktop.</p>
-                        <button class="preview-btn" onclick="openModal('mtsistem')">Ver mais</button>
-                    </div>
-                    <!-- Adicione outros projetos aqui -->
-                </div>
-            </div>
-        </section>
 
         <section id="skills" class="section skills">
             <div class="container">
@@ -1131,6 +1184,34 @@
             </div>
         </section>
 
+        <section id="testimonials" class="section testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Depoimentos & Reconhecimentos</h2>
+                    <p>Veja o que clientes, colegas e parceiros dizem sobre meu trabalho</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">“O sistema desenvolvido pelo Miquéias facilitou muito nossa gestão financeira. Atendimento excelente e suporte rápido!”</p>
+                        <div class="testimonial-author">
+                            <img src="static/user1.png" alt="Cliente 1" class="testimonial-photo">
+                            <span class="author-name">João Silva</span>
+                            <span class="author-role">Presidente UMP PB</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">“Profissional dedicado, sempre entrega soluções inovadoras e eficientes. Recomendo para projetos de qualquer porte.”</p>
+                        <div class="testimonial-author">
+                            <img src="static/user2.png" alt="Colega 2" class="testimonial-photo">
+                            <span class="author-name">Ana Souza</span>
+                            <span class="author-role">Desenvolvedora Frontend</span>
+                        </div>
+                    </div>
+                    <!-- Adicione mais depoimentos conforme desejar -->
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="section contact">
             <div class="container">
                 <div class="section-title">
@@ -1160,36 +1241,166 @@
     </footer>
 
     <!-- Modal do projeto UMP Financeiro -->
-<div id="modal-umpfinanceiro" class="project-modal">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('umpfinanceiro')">&times;</span>
-        <h2>UMP Financeiro</h2>
-        <div class="modal-carousel">
-            <img src="static/ump1.png" alt="UMP Financeiro 1" class="modal-img active">
-            <img src="static/ump2.png" alt="UMP Financeiro 2" class="modal-img">
-            <img src="static/ump3.png" alt="UMP Financeiro 3" class="modal-img">
-            <img src="static/ump4.png" alt="UMP Financeiro 4" class="modal-img">
-            <img src="static/ump5.png" alt="UMP Financeiro 5" class="modal-img">
-            <button class="carousel-btn prev" onclick="moveModalCarousel(-1, 'umpfinanceiro')">&#10094;</button>
-            <button class="carousel-btn next" onclick="moveModalCarousel(1, 'umpfinanceiro')">&#10095;</button>
+<div id="modal-umpfinanceiro" class="project-modal" style="
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 2rem;
+    box-sizing: border-box;
+">
+    <div class="modal-content" style="
+        background: #fff;
+        border-radius: 12px;
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem;
+        position: relative;
+        box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        animation: fadeIn 0.3s ease;
+    ">
+        <span class="close-modal" onclick="closeModal('umpfinanceiro')" style="
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #333;
+            cursor: pointer;
+        ">&times;</span>
+
+        <h2 style="text-align: center; color: #2764eb; font-size: 2rem;">UMP Financeiro</h2>
+
+        <!-- CARROSSEL -->
+        <div class="modal-carousel" style="position: relative; margin-top: 1.5rem;">
+            <img src="static/ump1.png" alt="UMP Financeiro 1" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+            <img src="static/ump2.png" alt="UMP Financeiro 2" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+            <img src="static/ump3.png" alt="UMP Financeiro 3" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+            <img src="static/ump4.png" alt="UMP Financeiro 4" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+            <img src="static/ump5.png" alt="UMP Financeiro 5" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+
+            <button class="carousel-btn prev" onclick="moveModalCarousel(-1, 'umpfinanceiro')" style="
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                background: rgba(0,0,0,0.5);
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            ">&#10094;</button>
+
+            <button class="carousel-btn next" onclick="moveModalCarousel(1, 'umpfinanceiro')" style="
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                background: rgba(0,0,0,0.5);
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            ">&#10095;</button>
         </div>
-        <div class="tech-stack">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">SQLAlchemy</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Integração com APIs</span>
+
+        <!-- STACK -->
+        <div class="tech-stack" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">Python</span>
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">Flask</span>
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">SQLAlchemy</span>
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">PostgreSQL</span>
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">HTML</span>
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">CSS</span>
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">JavaScript</span>
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">Docker</span>
+            <span class="tech-tag" style="
+                background: #2764eb;
+                color: white;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">Integração com APIs</span>
+
         </div>
-        <div class="project-links">
-            <a href="https://github.com/telesmiqueiasps/umpfinanceiro" class="project-link" target="_blank">GitHub →</a>
-            <a href="https://web-production-2a02a.up.railway.app/login?next=%2F" class="project-link" target="_blank">Demo →</a>
+
+        <!-- LINKS -->
+        <div class="project-links" style="text-align: center; margin-top: 2rem;">
+            <a href="https://github.com/telesmiqueiasps/umpfinanceiro" target="_blank" style="
+                margin: 0 1rem;
+                color: #2764eb;
+                font-weight: bold;
+                text-decoration: none;
+            ">🔗 GitHub</a>
+            <a href="https://web-production-2a02a.up.railway.app/login?next=%2F" target="_blank" style="
+                margin: 0 1rem;
+                color: #2764eb;
+                font-weight: bold;
+                text-decoration: none;
+            ">🚀 Demo</a>
         </div>
-        <div class="project-details">
-            <ul>
+
+        <!-- DETALHES -->
+        <div class="project-details" style="margin-top: 2rem;">
+            <ul style="list-style: disc; padding-left: 1.5rem; color: #444; font-size: 0.95rem;">
                 <li>Painel administrativo intuitivo para gestão financeira.</li>
                 <li>Controle de sócios, lançamentos, relatórios e consultas.</li>
                 <li>Orientações e suporte integrado.</li>
@@ -1199,34 +1410,111 @@
         </div>
     </div>
 </div>
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
 <!-- Modal do projeto MTSistem RH -->
-<div id="modal-mtsistem" class="project-modal">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('mtsistem')">&times;</span>
-        <h2>MTSistem - Gestão de RH</h2>
-        <div class="modal-carousel">
-            <img src="static/rh1.png" alt="MTSistem RH 1" class="modal-img active">
-            <img src="static/rh2.png" alt="MTSistem RH 2" class="modal-img">
-            <img src="static/rh3.png" alt="MTSistem RH 3" class="modal-img">
-            <img src="static/rh4.png" alt="MTSistem RH 4" class="modal-img">
-            <img src="static/rh5.png" alt="MTSistem RH 5" class="modal-img">
-            <button class="carousel-btn prev" onclick="moveModalCarousel(-1, 'mtsistem')">&#10094;</button>
-            <button class="carousel-btn next" onclick="moveModalCarousel(1, 'mtsistem')">&#10095;</button>
+<div id="modal-mtsistem" class="project-modal" style="
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 2rem;
+    box-sizing: border-box;
+">
+    <div class="modal-content" style="
+        background: #fff;
+        border-radius: 12px;
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem;
+        position: relative;
+        box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        animation: fadeIn 0.3s ease;
+    ">
+        <span class="close-modal" onclick="closeModal('mtsistem')" style="
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            color: #333;
+            cursor: pointer;
+        ">&times;</span>
+
+        <h2 style="text-align: center; color: #2764eb; font-size: 2rem;">MTSistem - Gestão de RH</h2>
+
+        <!-- CARROSSEL -->
+        <div class="modal-carousel" style="position: relative; margin-top: 1.5rem;">
+            <img src="static/rh1.png" alt="MTSistem RH 1" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+            <img src="static/rh2.png" alt="MTSistem RH 2" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+            <img src="static/rh3.png" alt="MTSistem RH 3" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+            <img src="static/rh4.png" alt="MTSistem RH 4" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+            <img src="static/rh5.png" alt="MTSistem RH 5" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+
+            <button class="carousel-btn prev" onclick="moveModalCarousel(-1, 'mtsistem')" style="
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                background: rgba(0,0,0,0.5);
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+            ">&#10094;</button>
+
+            <button class="carousel-btn next" onclick="moveModalCarousel(1, 'mtsistem')" style="
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                background: rgba(0,0,0,0.5);
+                color: white;
+                border: none;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            ">&#10095;</button>
         </div>
-        <div class="tech-stack">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Tkinter</span>
-            <span class="tech-tag">CustomTkinter</span>
-            <span class="tech-tag">SQLAlchemy</span>
-            <span class="tech-tag">SQLite</span>
-            <span class="tech-tag">Pillow</span>
-            <span class="tech-tag">Integração com APIs</span>
+
+        <!-- STACK -->
+        <div class="tech-stack" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Python</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Tkinter</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">CustomTkinter</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">SQLAlchemy</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">SQLite</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Pillow</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Integração com APIs</span>
         </div>
-        <div class="project-links">
-            <a href="https://github.com/telesmiqueiasps/MTSistem-RH---Dark-Mode" class="project-link" target="_blank">GitHub →</a>
+
+        <!-- LINKS -->
+        <div class="project-links" style="text-align: center; margin-top: 2rem;">
+            <a href="https://github.com/telesmiqueiasps/MTSistem-RH---Dark-Mode" target="_blank" style="
+                margin: 0 1rem;
+                color: #2764eb;
+                font-weight: bold;
+                text-decoration: none;
+            ">🔗 GitHub</a>
         </div>
-        <div class="project-details">
-            <ul>
+
+        <!-- DETALHES -->
+        <div class="project-details" style="margin-top: 2rem;">
+            <ul style="list-style: disc; padding-left: 1.5rem; color: #444; font-size: 0.95rem;">
                 <li>Gestão de colaboradores e folha de pagamento.</li>
                 <li>Relatórios detalhados e exportação de dados.</li>
                 <li>Interface moderna com CustomTkinter.</li>
@@ -1236,6 +1524,15 @@
         </div>
     </div>
 </div>
+
+<!-- Animação opcional -->
+<style>
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
 
     <script>
         // Header scroll effect
@@ -1278,7 +1575,7 @@
         }, observerOptions);
 
         // Observe all elements that need animation
-        document.querySelectorAll('.section-title, .about-text, .about-image, .project-card, .skill-item').forEach(el => {
+        document.querySelectorAll('.section-title, .project-card, .skill-item').forEach(el => {
             observer.observe(el);
         });
 
