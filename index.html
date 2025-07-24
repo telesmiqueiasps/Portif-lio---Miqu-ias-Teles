@@ -10,6 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <style>
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cta-button.secondary {
+            background-color: #ffffff;
+            color: #2764eb;
+            border: 2px solid #2764eb;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: #2764eb;
+            color: #ffffff;
+        }
+
         .project-carousel {
             position: relative;
             width: 100%;
@@ -1053,7 +1072,11 @@
                     <div class="hero-text">
                         <h1>Olá, eu sou <span class="highlight">Miquéias Teles</span></h1>
                         <p><strong>Desenvolvedor Full Stack</strong> | Tenho formação acadêmica em <strong>Contabilidade</strong>, o que me proporcionou uma visão prática sobre gestão empresarial e processos financeiros. Essa experiência foi fundamental para criar sistemas como o <strong>UMP Financeiro</strong> e o <strong>MTSistem - Gestão de RH</strong>, unindo conhecimento técnico e de negócios para entregar soluções eficientes e inovadoras.</p>
-                        <a href="#projects" class="cta-button">Ver Meus Projetos</a>
+                        
+                        <div class="hero-buttons">
+                            <a href="#projects" class="cta-button">Ver Meus Projetos</a>
+                            <a href="static/curriculo_dev_miqueias_teles.pdf" class="cta-button secondary" download>Baixar CV</a>
+                        </div>
                     </div>
                 </div>
                 <div class="hero-photo-wrapper no-bg">
@@ -1075,7 +1098,7 @@
                 ">
                     <!-- Card 1 -->
                     <div class="project-preview-card" style="
-                        background: white;
+                        background: #f8fafc;
                         border-radius: 12px;
                         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
                         overflow: hidden;
@@ -1102,7 +1125,7 @@
 
                     <!-- Card 2 -->
                     <div class="project-preview-card" style="
-                        background: white;
+                        background: #f8fafc;
                         border-radius: 12px;
                         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
                         overflow: hidden;
