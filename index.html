@@ -383,7 +383,7 @@
         .skill-item {
             text-align: center;
             padding: 2rem 1rem;
-            background: var(--bg-light);
+            background: var(--white);
             border-radius: 20px;
             transition: var(--transition);
             opacity: 0;
@@ -1060,7 +1060,7 @@
             <div class="container" style="max-width: 1200px; margin: auto; padding: 0 1rem;">
                 <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
                     <h2 style="font-size: 2.5rem;">Meus Projetos</h2>
-                    <p style="color: #555;">Confira uma prévia dos meus principais projetos</p>
+                    <p>Confira uma prévia dos meus principais projetos</p>
                 </div>
                 <div class="projects-preview-grid" style="
                     display: grid;
@@ -1251,18 +1251,20 @@
     height: 100%;
     overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.75);
-    padding: 2rem;
+    padding: 2rem 1rem;
     box-sizing: border-box;
 ">
     <div class="modal-content" style="
         background: #fff;
         border-radius: 12px;
         max-width: 900px;
+        width: 100%;
         margin: auto;
         padding: 2rem;
         position: relative;
         box-shadow: 0 0 30px rgba(0,0,0,0.2);
         animation: fadeIn 0.3s ease;
+        box-sizing: border-box;
     ">
         <span class="close-modal" onclick="closeModal('umpfinanceiro')" style="
             position: absolute;
@@ -1276,7 +1278,10 @@
         <h2 style="text-align: center; color: #2764eb; font-size: 2rem;">UMP Financeiro</h2>
 
         <!-- CARROSSEL -->
-        <div class="modal-carousel" style="position: relative; margin-top: 1.5rem;">
+        <div class="modal-carousel" style="
+            position: relative;
+            margin-top: 1.5rem;
+        ">
             <img src="static/ump1.png" alt="UMP Financeiro 1" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
             <img src="static/ump2.png" alt="UMP Financeiro 2" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
             <img src="static/ump3.png" alt="UMP Financeiro 3" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
@@ -1288,11 +1293,11 @@
                 top: 50%;
                 left: 0;
                 transform: translateY(-50%);
-                font-size: 2rem;
+                font-size: 1.8rem;
                 background: rgba(0,0,0,0.5);
                 color: white;
                 border: none;
-                padding: 0.5rem 1rem;
+                padding: 0.4rem 0.8rem;
                 cursor: pointer;
                 border-top-right-radius: 8px;
                 border-bottom-right-radius: 8px;
@@ -1303,11 +1308,11 @@
                 top: 50%;
                 right: 0;
                 transform: translateY(-50%);
-                font-size: 2rem;
+                font-size: 1.8rem;
                 background: rgba(0,0,0,0.5);
                 color: white;
                 border: none;
-                padding: 0.5rem 1rem;
+                padding: 0.4rem 0.8rem;
                 cursor: pointer;
                 border-top-left-radius: 8px;
                 border-bottom-left-radius: 8px;
@@ -1315,86 +1320,40 @@
         </div>
 
         <!-- STACK -->
-        <div class="tech-stack" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">Python</span>
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">Flask</span>
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">SQLAlchemy</span>
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">PostgreSQL</span>
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">HTML</span>
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">CSS</span>
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">JavaScript</span>
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">Docker</span>
-            <span class="tech-tag" style="
-                background: #2764eb;
-                color: white;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.85rem;
-            ">Integração com APIs</span>
-
+        <div class="tech-stack" style="
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        ">
+            <!-- Tags tecnológicas -->
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Python</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Flask</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">SQLAlchemy</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">PostgreSQL</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">HTML</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">CSS</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">JavaScript</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Docker</span>
+            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Integração com APIs</span>
         </div>
 
         <!-- LINKS -->
         <div class="project-links" style="text-align: center; margin-top: 2rem;">
             <a href="https://github.com/telesmiqueiasps/umpfinanceiro" target="_blank" style="
-                margin: 0 1rem;
+                margin: 0.5rem;
                 color: #2764eb;
                 font-weight: bold;
                 text-decoration: none;
+                display: inline-block;
             ">🔗 GitHub</a>
             <a href="https://web-production-2a02a.up.railway.app/login?next=%2F" target="_blank" style="
-                margin: 0 1rem;
+                margin: 0.5rem;
                 color: #2764eb;
                 font-weight: bold;
                 text-decoration: none;
+                display: inline-block;
             ">🚀 Demo</a>
         </div>
 
@@ -1410,6 +1369,7 @@
         </div>
     </div>
 </div>
+
 <style>
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.96); }
@@ -1418,7 +1378,51 @@
 </style>
 
 <!-- Modal do projeto MTSistem RH -->
-<div id="modal-mtsistem" class="project-modal" style="
+<div id="modal-mtsistem" class="project-modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('mtsistem')">&times;</span>
+        <h2>MTSistem - Gestão de RH</h2>
+
+        <div class="modal-carousel">
+            <img src="static/rh1.png" alt="MTSistem RH 1" class="modal-img active">
+            <img src="static/rh2.png" alt="MTSistem RH 2" class="modal-img">
+            <img src="static/rh3.png" alt="MTSistem RH 3" class="modal-img">
+            <img src="static/rh4.png" alt="MTSistem RH 4" class="modal-img">
+            <img src="static/rh5.png" alt="MTSistem RH 5" class="modal-img">
+
+            <button class="carousel-btn prev" onclick="moveModalCarousel(-1, 'mtsistem')">&#10094;</button>
+            <button class="carousel-btn next" onclick="moveModalCarousel(1, 'mtsistem')">&#10095;</button>
+        </div>
+
+        <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Tkinter</span>
+            <span class="tech-tag">CustomTkinter</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">Pillow</span>
+            <span class="tech-tag">Integração com APIs</span>
+        </div>
+
+        <div class="project-links">
+            <a href="https://github.com/telesmiqueiasps/MTSistem-RH---Dark-Mode" target="_blank">🔗 GitHub</a>
+        </div>
+
+        <div class="project-details">
+            <ul>
+                <li>Gestão de colaboradores e folha de pagamento.</li>
+                <li>Relatórios detalhados e exportação de dados.</li>
+                <li>Interface moderna com CustomTkinter.</li>
+                <li>Integração com APIs externas.</li>
+                <li>Banco de dados local com SQLite.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Estrutura geral */
+.project-modal {
     display: none;
     position: fixed;
     z-index: 9999;
@@ -1430,108 +1434,151 @@
     background-color: rgba(0, 0, 0, 0.75);
     padding: 2rem;
     box-sizing: border-box;
-">
-    <div class="modal-content" style="
-        background: #fff;
-        border-radius: 12px;
-        max-width: 900px;
-        margin: auto;
-        padding: 2rem;
-        position: relative;
-        box-shadow: 0 0 30px rgba(0,0,0,0.2);
-        animation: fadeIn 0.3s ease;
-    ">
-        <span class="close-modal" onclick="closeModal('mtsistem')" style="
-            position: absolute;
-            top: 1rem;
-            right: 1.5rem;
-            font-size: 2rem;
-            color: #333;
-            cursor: pointer;
-        ">&times;</span>
+}
 
-        <h2 style="text-align: center; color: #2764eb; font-size: 2rem;">MTSistem - Gestão de RH</h2>
+/* Conteúdo central */
+.modal-content {
+    background: #fff;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.3s ease;
+}
 
-        <!-- CARROSSEL -->
-        <div class="modal-carousel" style="position: relative; margin-top: 1.5rem;">
-            <img src="static/rh1.png" alt="MTSistem RH 1" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
-            <img src="static/rh2.png" alt="MTSistem RH 2" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
-            <img src="static/rh3.png" alt="MTSistem RH 3" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
-            <img src="static/rh4.png" alt="MTSistem RH 4" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
-            <img src="static/rh5.png" alt="MTSistem RH 5" class="modal-img active" style="width: 100%; border-radius: 8px; display: block;">
+/* Botão fechar */
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
 
-            <button class="carousel-btn prev" onclick="moveModalCarousel(-1, 'mtsistem')" style="
-                position: absolute;
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%);
-                font-size: 2rem;
-                background: rgba(0,0,0,0.5);
-                color: white;
-                border: none;
-                padding: 0.5rem 1rem;
-                cursor: pointer;
-                border-top-right-radius: 8px;
-                border-bottom-right-radius: 8px;
-            ">&#10094;</button>
+/* Título */
+.modal-content h2 {
+    text-align: center;
+    color: #2764eb;
+    font-size: 2rem;
+}
 
-            <button class="carousel-btn next" onclick="moveModalCarousel(1, 'mtsistem')" style="
-                position: absolute;
-                top: 50%;
-                right: 0;
-                transform: translateY(-50%);
-                font-size: 2rem;
-                background: rgba(0,0,0,0.5);
-                color: white;
-                border: none;
-                padding: 0.5rem 1rem;
-                cursor: pointer;
-                border-top-left-radius: 8px;
-                border-bottom-left-radius: 8px;
-            ">&#10095;</button>
-        </div>
+/* Carrossel */
+.modal-carousel {
+    position: relative;
+    margin-top: 1.5rem;
+}
+.modal-img {
+    width: 100%;
+    border-radius: 8px;
+    display: none;
+}
+.modal-img.active {
+    display: block;
+}
 
-        <!-- STACK -->
-        <div class="tech-stack" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
-            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Python</span>
-            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Tkinter</span>
-            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">CustomTkinter</span>
-            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">SQLAlchemy</span>
-            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">SQLite</span>
-            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Pillow</span>
-            <span class="tech-tag" style="background: #2764eb; color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem;">Integração com APIs</span>
-        </div>
+/* Botões carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.carousel-btn.prev {
+    left: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.carousel-btn.next {
+    right: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
 
-        <!-- LINKS -->
-        <div class="project-links" style="text-align: center; margin-top: 2rem;">
-            <a href="https://github.com/telesmiqueiasps/MTSistem-RH---Dark-Mode" target="_blank" style="
-                margin: 0 1rem;
-                color: #2764eb;
-                font-weight: bold;
-                text-decoration: none;
-            ">🔗 GitHub</a>
-        </div>
+/* Tech tags */
+.tech-stack {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.tech-tag {
+    background: #2764eb;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
 
-        <!-- DETALHES -->
-        <div class="project-details" style="margin-top: 2rem;">
-            <ul style="list-style: disc; padding-left: 1.5rem; color: #444; font-size: 0.95rem;">
-                <li>Gestão de colaboradores e folha de pagamento.</li>
-                <li>Relatórios detalhados e exportação de dados.</li>
-                <li>Interface moderna com CustomTkinter.</li>
-                <li>Integração com APIs externas.</li>
-                <li>Banco de dados local com SQLite.</li>
-            </ul>
-        </div>
-    </div>
-</div>
+/* Links */
+.project-links {
+    text-align: center;
+    margin-top: 2rem;
+}
+.project-links a {
+    margin: 0 1rem;
+    color: #2764eb;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-<!-- Animação opcional -->
-<style>
+/* Detalhes */
+.project-details {
+    margin-top: 2rem;
+}
+.project-details ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* Animação */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.96); }
     to { opacity: 1; transform: scale(1); }
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1.2rem;
+        border-radius: 8px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .project-links a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .project-details ul {
+        font-size: 0.9rem;
+    }
+}
 </style>
+
 
 
     <script>
