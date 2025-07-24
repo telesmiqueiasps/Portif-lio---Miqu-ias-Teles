@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miquéias Teles - Desenvolvedor</title>
+    <link rel="icon" href="static/icone.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -923,18 +924,23 @@
             /* Leve sombra para destacar em fundos claros */
             filter: drop-shadow(0 4px 24px rgba(37,99,235,0.10));
         }
-        @media (max-width: 900px) {
-            .hero-flex {
-                flex-direction: column-reverse;
-                gap: 2rem;
-                min-height: unset;
-            }
-            .hero-photo-wrapper {
-                margin-bottom: 2rem;
-            }
-            .hero-left {
-                width: 100%;
-            }
+        @media (max-width: 768px) {
+        .hero-flex {
+            flex-direction: column-reverse; /* Foto embaixo no mobile */
+            align-items: center;
+            text-align: center;
+        }
+
+        .tech-icons-animated {
+            flex-wrap: wrap;
+            justify-content: center !important;
+            gap: 1rem !important;
+        }
+
+        .hero-photo-wrapper img {
+            height: auto;
+            max-width: 100%;
+        }
         }
         @media (max-width: 480px) {
             .hero-photo-wrapper {
